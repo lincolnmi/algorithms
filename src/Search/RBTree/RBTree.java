@@ -115,6 +115,14 @@ public class RBTree<Key extends Comparable<Key>,Value> {
         }
     }
 
+    public void deleteMin() {
+
+    }
+
+    private Node deleteMin(Node h) {
+        return null;
+    }
+
     public void levelOrder() {
         if (root==null) {
             return;
