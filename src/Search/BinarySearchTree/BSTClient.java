@@ -3,7 +3,7 @@ package Search.BinarySearchTree;
 /**
  * Created by Jason on 2016/4/8.
  */
-public class Client {
+public class BSTClient {
 
     public static void main(String[] args) {
         String str = "SEARCHEXAMPLE";

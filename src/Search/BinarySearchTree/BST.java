@@ -167,7 +167,7 @@ public class BST<Key extends Comparable<Key>,Value> {
                 int temp = 0;
                 while (start<count) {
                     Node node = keys.get(start++);
-                    System.out.print(node.key + " ");
+                    System.out.print(node.key + "-" + node.N + " ");
                     if (node.left != null) {
                         keys.add(node.left);
                         temp++;
