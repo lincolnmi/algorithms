@@ -22,7 +22,7 @@ public class FindKthClient {
         output(array);
 
         FindKthElement findKthElement = new FindKthElement();
-        System.out.println(findKthElement.select(array,k-1,0,size-1));
+        System.out.println(findKthElement.select(array,k));
     }
 
     private static void output(Integer[] array) {

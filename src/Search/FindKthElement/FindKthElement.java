@@ -4,8 +4,11 @@ package Search.FindKthElement;
  * Created by Jason on 2016/4/8.
  */
 public class FindKthElement<T extends Comparable<T>> {
+    public T select(T[] array,int k) {
+        return select(array,k-1,0,array.length-1);
+    }
 
-    public T select(T[] array,int k,int left,int right) {
+    private T select(T[] array,int k,int left,int right) {
         int j = partition(array,left,right);
         if (j<k) {
             return select(array,k,j+1,right);
