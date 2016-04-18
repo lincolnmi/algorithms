@@ -26,7 +26,7 @@ public class BitMap {
     public boolean isExist(int x) {
         int idx = x >> shift;
         int value = x & (1<<shift);
-        int flag = (array[idx] | 1<<value);
+        int flag = (array[idx] & (1<<value));
         return (flag==1)?true:false;
     }
 
@@ -55,7 +55,7 @@ public class BitMap {
 
         bitMap.insertAll();
         System.out.println("data generate done!");
-        System.out.println(bitMap.isExist(size));
+        System.out.println(bitMap.isExist(size+1));
     }
 
 }
