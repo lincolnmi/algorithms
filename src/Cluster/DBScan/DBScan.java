@@ -37,7 +37,12 @@ public class DBScan {
                             ArrayList<Point> adjacentAdjacentPoints = getAdjacentPoints(adjacentPoint, points);
                             //add point which adjacent points not less than minPts noised
                             if (adjacentAdjacentPoints != null && adjacentAdjacentPoints.size() >= minPts) {
-                                adjacentPoints.addAll(adjacentAdjacentPoints);
+                                //adjacentPoints.addAll(adjacentAdjacentPoints);
+                                for (Point pp : adjacentAdjacentPoints){
+                                    if (!adjacentPoints.contains(pp)){
+                                        adjacentPoints.add(pp);
+                                    }
+                                }
                             }
                         }
                         //add point which doest not belong to any cluster
@@ -51,6 +56,9 @@ public class DBScan {
                     }
                     cluster++;
                 }
+            }
+            if (idx%1000==0) {
+                System.out.println(idx);
             }
         }
     }

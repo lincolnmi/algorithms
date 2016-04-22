@@ -1,8 +1,6 @@
 package Cluster.DBScan;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -51,6 +49,26 @@ public class Data {
         points.add(new Point(14,9));
         points.add(new Point(14,15));
         points.add(new Point(15,8));
+        return points;
+    }
+
+    public static ArrayList<Point> getData(String sourcePath) {
+        ArrayList<Point> points = new ArrayList<Point>();
+        File fileIn = new File(sourcePath);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileIn));
+            String line = null;
+            line = br.readLine();
+            while (line != null) {
+                Double x = Double.parseDouble(line.split(",")[3]);
+                Double y = Double.parseDouble(line.split(",")[4]);
+                points.add(new Point(x, y));
+                line = br.readLine();
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return points;
     }
 
